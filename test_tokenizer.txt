@@ -1,4 +1,1 @@
-Hello. This is a test
-\n THIS
-\
-/n
+Hello. This is a test this
