@@ -13,6 +13,14 @@ def ngram(Filename):
 			ngram_dict[i] = 1
 	print (ngram_dict)
 
+	# works for bigrams
+	ngram_dict2 = {}
+	for i in range(len(tokens)-1):
+		if tokens[i]+' '+tokens[i+1] in ngram_dict2:
+			ngram_dict2[tokens[i]+' '+tokens[i+1]] += 1
+		else:
+			ngram_dict2[tokens[i]+' '+tokens[i+1]] = 1
+	print (ngram_dict2)
 
 
 
