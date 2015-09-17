@@ -30,8 +30,9 @@ def ngram_prob(dict1, num_tokens):
 def ngram(Filename):
 	tokens = tokenize1(Filename)
 	num_tokens = 0
+
 	num_bigrams = 0
-	#works for unigrams and bigrams
+
 	ngram_dict = {}
 	bgram_dict = {}
 	for i,val in enumerate(tokens): #Get a dictionary with each word and the number of occurrences
@@ -57,13 +58,7 @@ def ngram(Filename):
 	
 	#Get probability each word occurs given the word before it. We have total occurances in unigram 
 	return [ngram_dict, bgram_dict]
-	
 
-#create a list with the unigram/bigram and the probability that it appears in a second list at the corresponding index
-#but to do this, we need to know whether each key is a unigram or bigram and the current dictionary won't tell us that
-#possible hacky solution: 2 dictionaries
-
-	
 
 if __name__ == '__main__':
 	try:
@@ -81,12 +76,7 @@ if __name__ == '__main__':
 		y.write(str(dict1[1]))
 		y.close()
 	except:
-		print "Please run the file in the form 'python main.py [text_file]', and please enter valid filenames"
+		print ("Please run the file in the form 'python main.py [text_file]', and please enter valid filenames")
 
 	
 
-
-#Use these in Main 
-	#random_start = random.choice(sentence_gen_info.keys()) #Pick a random place to start
-	#random_length = random.randint(5,20) #Pick a random setence length from 5 words to 20 words
-	
