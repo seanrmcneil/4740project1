@@ -61,4 +61,4 @@ if __name__ == '__main__':
 			sentence= bigram_random_sentence(bgram_info,random_start,int(sentence_length),list1)
 			print sentence
 	except:
-		print "Please run the function in the form: python sentencegen.py [bigramfile], and enter a valid integer as the sentence length"
+		print "Please run the function in the form: python word_gen.py [bigramfile], and enter a valid integer as the sentence length"

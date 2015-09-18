@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4582121f-1c4a-4510-9071-cbfea1b24cc2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/bigram1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/test_books/children/the_magic_city.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/test_books/crime/the_daffodil_mystery.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/test_books/crime/the_moon_rock.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/test_books/history/bacon.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_4.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_5.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_6.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_7.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/children/the_junior_classics_vol_8.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/a_thief_in_the_night.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/arsene_lupin.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/crime_and_punishment.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/the_adventures_of_sherlock_holmes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/the_extraordinary_adventures_of_arsene_lupin.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/crime/the_mysterious_affair_at_styles.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/history/famous_men_of_the_middle_ages.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/history/julius_caesar_vol_1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/books/train_books/history/queen_victoria.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/tokenizer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/unigram1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/unigram_book1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/w" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Crypto/word_gen.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldmain.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/oldtokenizer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test_tokenizer.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tokenizer.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLP part 1/main.py" afterPath="$PROJECT_DIR$/NLP part 1/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLP part 1/word_gen.py" afterPath="$PROJECT_DIR$/NLP part 1/word_gen.py" />
     </list>
     <ignored path="4740project1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/NLP part 1/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="95" selection-end-column="4" />
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -71,9 +39,21 @@
       <file leaf-file-name="word_gen.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NLP part 1/word_gen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.520661">
-              <caret line="63" column="137" selection-start-line="63" selection-start-column="137" selection-end-line="63" selection-end-column="137" />
+            <state vertical-scroll-proportion="0.9586777">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tokenizer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NLP part 1/tokenizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +74,8 @@
         <option value="$PROJECT_DIR$/Crypto/word_gen.py" />
         <option value="$PROJECT_DIR$/Crypto/tokenizer.py" />
         <option value="$PROJECT_DIR$/Crypto/main.py" />
-        <option value="$PROJECT_DIR$/NLP part 1/main.py" />
         <option value="$PROJECT_DIR$/NLP part 1/word_gen.py" />
+        <option value="$PROJECT_DIR$/NLP part 1/main.py" />
       </list>
     </option>
   </component>
@@ -151,6 +131,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="NLP part 1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4740project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4740project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP part 1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="train_books" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4740project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4740project1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NLP part 1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="books" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,20 +460,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NLP part 1/childAllUni">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLP part 1/child1uni">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6859503">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NLP part 1/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="95" selection-end-column="4" />
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NLP part 1/tokenizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NLP part 1/word_gen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.520661">
-          <caret line="63" column="137" selection-start-line="63" selection-start-column="137" selection-end-line="63" selection-end-column="137" />
+        <state vertical-scroll-proportion="0.9586777">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>

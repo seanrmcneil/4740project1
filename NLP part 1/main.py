@@ -13,12 +13,13 @@ import sys
 #bigrams and the number of times they occur. The second is a dictionary with the probability 
 #each bigram will occur, given that the first word occurs (Number of times the first word occurs/number
 #of times this word comes after it. The last data structure is a dictionary containing each word
-#and as the value pair a second dictionary with each pair of words following it, and the number of times
-#that pair happens in the corpus. This will be used in our sentence generator because it will pick a 
+#and as the value pair a second dictionary with the second word pf each pair of words following it,
+#and the number of times that pair happens in the corpus.
+#This will be used in our sentence generator because it will pick a
 #starting word, look up in this layered dictionary the word and choose one of the other options based on 
 #how frequently they occur. 
-#For example, this may look like: { 'a' : {'a car' : 1, 'a bike' :2}, 'apple' : {'apple pie': 1, 'apple tree' : 3}}
-#Thinking heavily about changing this for simplicity to instead of saying the bigram just the second word 
+#For example, this may look like: { 'a' : {'car' : 1, 'bike' :2}, 'apple' : {'pie': 1, 'tree' : 3}}
+
 
 
 def ngram_prob(dict1, num_tokens):
@@ -87,10 +88,3 @@ if __name__ == '__main__':
 	except:
 		print "Please run the file in the form 'python main.py [text_file]', and please enter valid filenames"
 
-	
-
-
-#Use these in Main 
-	#random_start = random.choice(sentence_gen_info.keys()) #Pick a random place to start
-	#random_length = random.randint(5,20) #Pick a random setence length from 5 words to 20 words
-	
