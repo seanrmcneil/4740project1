@@ -27,48 +27,57 @@ def ngram_prob(dict1, num_tokens):
 		ngram_probabilities[item] = Decimal(dict1[item])/Decimal(num_tokens)
 	return ngram_probabilities
 
-def ngram(Filename):
+def ngram(Filename, ngram_dict,bgram_dict):
 	tokens = tokenize1(Filename)
 	num_tokens = 0
-
 	num_bigrams = 0
-
-	ngram_dict = {}
-	bgram_dict = {}
-	for i,val in enumerate(tokens): #Get a dictionary with each word and the number of occurrences
-		num_tokens += 1 #Counting the number of items in the list now instead of doing it later
-		if val in ngram_dict:
-			ngram_dict[val] += 1
-		else:
-			ngram_dict[val] = 1
-		if i == 0: #If it its the first word
-				pass
-		else:
-			first_word = tokens[i-1]
-			if first_word in bgram_dict:
-				if val in bgram_dict[first_word]: #if the value is in the dictionary of bigrams
-					bgram_dict[first_word][val] += 1
-				else:
-					bgram_dict[first_word][val] = 1
+	#works for unigrams and bigrams
+	for i,val1 in enumerate(tokens): #Get a dictionary with each word and the number of occurrences
+		try:
+			val = str(val1)
+			num_tokens += 1 #Counting the number of items in the list now instead of doing it later
+			if val in ngram_dict:
+				ngram_dict[val] += 1
 			else:
-				bgram_dict[first_word] = {}
-				bgram_dict[first_word][val] = 1
+				ngram_dict[val] = 1
+			if i == 0: #If it its the first word
+					pass
+			else:
+				first_word = tokens[i-1]
+				if first_word in bgram_dict:
+					if val in bgram_dict[first_word]: #if the value is in the dictionary of bigrams
+						bgram_dict[first_word][val] += 1
+					else:
+						bgram_dict[first_word][val] = 1
+				else:
+					bgram_dict[first_word] = {}
+					bgram_dict[first_word][val] = 1
+		except:
+			print "Non-string parsable value; skipping"
 
 	probs = ngram_prob(ngram_dict,num_tokens)
 	
 	#Get probability each word occurs given the word before it. We have total occurances in unigram 
 	return [ngram_dict, bgram_dict]
+	
+	
+def get_grams(grams, index, num_files):
+	if index > number_of_files -2:
+		return grams
+	else:
+		f = open(sys.argv[index+1],'r')
+		text = f.read()
+		f.close()
+		dict1 = ngram(text, grams[0], grams[1])
+		return get_grams(dict1,index+1,num_files)
 
 
 if __name__ == '__main__':
 	try:
 		unigram_name = raw_input("What would you like to name the unigram file?")
 		bigram_name = raw_input("What would you like to name the bigram file?")
-		f = open(sys.argv[1],'r')
-		text = f.read()
-		f.close()
-
-		dict1 = ngram(text)
+		number_of_files = len(sys.argv)
+		dict1 = get_grams([{},{}],0,number_of_files)
 		z = open(unigram_name,"w")
 		z.write(str(dict1[0]))
 		z.close()
@@ -76,7 +85,12 @@ if __name__ == '__main__':
 		y.write(str(dict1[1]))
 		y.close()
 	except:
-		print ("Please run the file in the form 'python main.py [text_file]', and please enter valid filenames")
+		print "Please run the file in the form 'python main.py [text_file]', and please enter valid filenames"
 
 	
 
+
+#Use these in Main 
+	#random_start = random.choice(sentence_gen_info.keys()) #Pick a random place to start
+	#random_length = random.randint(5,20) #Pick a random setence length from 5 words to 20 words
+	
