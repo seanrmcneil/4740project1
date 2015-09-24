@@ -7,9 +7,8 @@ sample= {"hi": {"hey":3}, "banana": {"monkey":2}, "hey":{"ho":3, "this":1}, "mon
 
 
 #good turing smoothing for bigrams
-def good_turring_bigram(unigram_dict, bigram_dict):
-	Nb = count_bigrams(unigram_dict, bigram_dict)
-	print Nb
+def good_turring_bigram(bigram_dict):
+	Nb = count_bigrams(bigram_dict)
 	# if the count is less than 5 for that bigram, apply good turing to it
 	for key,dict2 in bigram_dict.iteritems():
 		for name, value in dict2.iteritems():
@@ -29,8 +28,9 @@ def good_turring_unigram(unigram_dict):
 	return unigram_dict
 
 
-def count_bigrams(unigram_dict, bigram_dict):
-	v = len(unigram_dict)
+def count_bigrams(bigram_dict):
+	#vocabulary +1 for last entry
+	v = len(bigram_dict) + 1
 	seen = sum(len(x) for x in bigram_dict.itervalues())
 
 	Nb = {"Nb0":0, "Nb1":0, "Nb2":0, "Nb3":0, "Nb4":0, "Nb5":0, "Nb6":0}
@@ -57,6 +57,6 @@ def count_unigrams(unigram_dict):
 		Nu["Nu{0}".format(i)] = sum(1 for x in unigram_dict.values() if x == i)
 	return Nu
 
-count_bigrams(d, sample)
-good_turring_bigram(d, sample)
+count_bigrams(sample)
+good_turring_bigram(sample)
 # good_turring_unigram(d)
