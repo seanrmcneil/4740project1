@@ -1,9 +1,8 @@
 
-
-#practice dictionary
+# practice dictionary
 d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
-sample= {"hi": {"hey":1}, "banana": {"monkey":2}, "hey":{"ho":3, "this":1, "is":1}, "monkey":{"eat":6, "loves":1}}
-
+sample= {"hi": {"hey": 1}, "banana": {"monkey": 2}, "hey": {"ho": 3, "this": 1, "is": 1},
+		 "monkey": {"eat": 6, "loves": 1}}
 
 
 def unknown_words_uni(unigram_dict):
@@ -17,6 +16,7 @@ def unknown_words_uni(unigram_dict):
 
 	return unigram_dict_unk
 
+
 def unknown_words_bi(bigram_dict):
 	bigram_dict_unk = bigram_dict.copy()
 	bigram_dict_unk["<UNK>"] = {"<UNK>": 0}
@@ -26,15 +26,13 @@ def unknown_words_bi(bigram_dict):
 		for name, value in dict2.items():
 			if (len(dict2)) == 1:
 				if dict2.get(name) == 1:
+					bigram_dict_unk["<UNK>"][key] = 1
 					bigram_dict_unk["<UNK>"]["<UNK>"] = bigram_dict_unk["<UNK>"]["<UNK>"] + 1
 					del bigram_dict_unk[key]
 			if value == 1:
 				del bigram_dict_unk[key][name]
-				bigram_dict_unk[key]["<UNK>"] =  bigram_dict_unk[key]["<UNK>"] + 1
-
-
-
-
+				bigram_dict_unk[key]["<UNK>"] = bigram_dict_unk[key]["<UNK>"] + 1
+				bigram_dict_unk["<UNK>"]["<UNK>"] = bigram_dict_unk["<UNK>"]["<UNK>"] + 1
 
 	print bigram_dict_unk
 
