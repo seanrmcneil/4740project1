@@ -1,7 +1,7 @@
 
 # practice dictionary
 d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
-sample= {"hi": {"hey": 1}, "banana": {"monkey": 2}, "hey": {"ho": 3, "this": 1, "is": 1},
+sample= {"hi": {"hey": 1}, "this": {"hey": 1}, "banana": {"monkey": 2}, "hey": {"ho": 3, "this": 1, "is": 1},
 		 "monkey": {"eat": 6, "loves": 1}}
 
 
@@ -28,7 +28,7 @@ def unknown_words_bi(bigram_dict):
 				if dict2.get(name) == 1:
 					bigram_dict_unk["<UNK>"][key] = 1
 					bigram_dict_unk["<UNK>"]["<UNK>"] = bigram_dict_unk["<UNK>"]["<UNK>"] + 1
-					del bigram_dict_unk[key]
+					#del bigram_dict_unk[key]
 			if value == 1:
 				del bigram_dict_unk[key][name]
 				bigram_dict_unk[key]["<UNK>"] = bigram_dict_unk[key]["<UNK>"] + 1
