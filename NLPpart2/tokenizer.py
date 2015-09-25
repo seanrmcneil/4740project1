@@ -1,5 +1,4 @@
 import re
-import nltk
 
 #takes the File of "raw text"
 #makes everything lowercase

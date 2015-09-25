@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 import math
+import sys
+import ast
 #perplexity function
 from decimal import *
 
@@ -17,47 +19,6 @@ def bi_total_num_tokens(dict1):
         for item2 in dict1[item]:
             total += dict1[item][item2]
     return total
-
-def unigram_perp(dict1, test): #dict1 is our language model and test is our test is a dictionary of the test document, with <unk> = unknown
-    N = float(uni_total_num_tokens(test))
-    n_dict = float(uni_total_num_tokens(dict1))
-    total = float(0)
-    for word in test:
-        if word in dict1:
-            if word != "<unk>":
-                prob = float(dict1[word])/float( n_dict) #Number of times this occured in the test divided by total number of words in the 
-                total += -math.log(prob)
-            else:
-                pass #Put probability handing for unknown words here
-        else:
-            pass #What to do if not in lang model at all
-    e_to_n = math.exp(float(total/N))
-    return e_to_n
-
-
-
-def bigram_perp(lang_model, test_model):
-    lang_model_n = float(bi_total_num_tokens(lang_model))
-    test_model_n = float(bi_total_num_tokens(test_model))
-    final = 0
-    for first_word in test_model:
-        for second_word in test_model[first_word]:
-            if first_word is "<unk>": #Unknown word
-                pass
-            elif first_word in lang_model and second_word in lang_model: #Bigram exists in model
-                total = float(uni_total_num_tokens(lang_model[first_word])) #Total number times first word appears (besides last, maybe)
-                this = float(lang_model[first_word][second_word]) #Number of times the second word comes after the first
-                second_prob = this/total #Probability this word comes after the fist
-                first_prob = total/lang_model_n #Probability the first word occured
-                cond_prob = second_prob/first_prob #Conditional probability
-                final += -math.log(cond_prob)
-            elif first_word in lang_model and not second_word in lang_model: #Word exists in model, but not bigram
-                pass
-            else: #Word does not exist in model
-                pass #
-    e_to_n = math.exp(final/test_model_n)
-    return e_to_n
-
 
                 
 #There are a number of ways to do this, right now I am just doing it linearly- 1 point per word match. one option I thought of 
@@ -81,6 +42,7 @@ def genre_classification(genre_list,test): #Genre list is a list of dictionaries
                     totals[index] += Decimal(genre_dict[word])/Decimal(test[word]) #Calculating how similar the number of occurences are
     max_matches = 0
     index = 0
+    print totals
     for i,matches in enumerate(totals):
         if matches > max_matches:
             max_matches = matches
@@ -94,16 +56,25 @@ def genre_classification(genre_list,test): #Genre list is a list of dictionaries
         
         
 if __name__ == '__main__':
-    dict1 = {"hi": 1, "hello":21, "molly": 3}
-    test2 = {"hi": 1, "hello":21,"molly":3}
-    test3 = {"heeey":9, "hi":1} 
-    bi = {"hi":{"hey":1}}
-    sample= {"hi": {"hey":3}, "hey":{"ho":3}}
-    listy = []
-    listy.append(dict1)
-    listy.append(test2)
-    listy.append(test3)
-    print bigram_perp(sample,bi)
+    print "Please put the sample text UNIGRAM model in  first then the genre UNIGRAM models after"
+    bi = []
+    f = open(sys.argv[2],'r')
+    dict0= ast.literal_eval(f.read())
+    f.close()
+    g = open(sys.argv[3],'r')
+    dict1= ast.literal_eval(g.read())
+    g.close()
+    h = open(sys.argv[4],'r')
+    dict2= ast.literal_eval(h.read())
+    h.close()
+    i = open(sys.argv[1],'r')
+    sample= ast.literal_eval(i.read())
+    i.close()
+    bi.append(dict0)
+    bi.append(dict1)
+    bi.append(dict2)
+    print "Starting test"
+    print genre_classification(bi,sample)
         
         
         

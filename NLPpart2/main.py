@@ -59,7 +59,7 @@ def ngram(Filename, ngram_dict,bgram_dict):
 
 	probs = ngram_prob(ngram_dict,num_tokens)
 	
-	unigram_dict = good_turring_unigram(ngram_dict)
+	unigram_dict = ngram_dict
 	bigram_dict = good_turring_bigram(bgram_dict)
 
 	return [unigram_dict, bigram_dict]
