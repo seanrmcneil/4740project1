@@ -2,6 +2,7 @@ from tokenizer import tokenize1
 from decimal import *
 import random
 import sys
+from good_turing import *
 
 #NGram Model
 #Molly Higgins and Sean Mcneil
@@ -58,8 +59,10 @@ def ngram(Filename, ngram_dict,bgram_dict):
 
 	probs = ngram_prob(ngram_dict,num_tokens)
 	
-	#Get probability each word occurs given the word before it. We have total occurances in unigram 
-	return [ngram_dict, bgram_dict]
+	unigram_dict = good_turring_unigram(ngram_dict)
+	bigram_dict = good_turring_bigram(bgram_dict)
+
+	return [unigram_dict, bigram_dict]
 	
 	
 def get_grams(grams, index, num_files):

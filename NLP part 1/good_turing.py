@@ -1,4 +1,6 @@
 #Simply replaces the counts of ngrams that occur infrequently using the good turing method
+# good_turing_unigram() takes in unigram_dict which is a dictionary of unigram counts for the corpus
+# good_turing_bigram() takes in a bigram)_dict which is a nested dictionary of bigram counts for the corpus
 
 #practice dictionaries
 #d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
