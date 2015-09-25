@@ -1,33 +1,33 @@
-
-
+import copy
+from tokenizer import *
 #practice dictionary
 d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
 sample= {"hi": {"hey":3}, "banana": {"monkey":2}, "hey":{"ho":3, "this":1}, "monkey":{"eat":6, "loves":1}}
 
 
-
-def unknown_words_uni(unigram_dict):
-	unigram_dict_unk = unigram_dict.copy()
-	unigram_dict_unk["<UNK>"] = 0
-
-	for key, value in unigram_dict.iteritems():
-		if value == 1:
-			del unigram_dict_unk[key]
-			unigram_dict_unk["<UNK>"] = unigram_dict_unk["<UNK>"] + 1
-
-	return unigram_dict_unk
-
-def unknown_words_bi(bigram_dict):
-	bigram_dict_unk = bigram_dict.copy()
-	bigram_dict_unk["<UNK>"] = 0
-
-	for key, dict2 in bigram_dict.iteritems():
-		for name, value in dict2.items():
-			if value == 1:
-				del bigram_dict_unk[key][name]
-				bigram_dict_unk["<UNK>"] = bigram_dict_unk["<UNK>"] + 1
-
-	return bigram_dict_unk
+#Test text is not yet bigrammed, just text
+def unknown_words(unigram_dict, test_txt):
+	txt = tokenize1(test_txt)
+	for index,word in enumerate(txt):
+		if not word in unigram_dict: # if its an unknown word
+			txt[index]= "<UNK>"
+	return txt
 
 
-unknown_words_bi(sample)
+
+def unknown_bigrams(bigram_dict,test_dict):
+	test_dict2 = copy.deepcopy(test_dict)
+	for item in test_dict:
+		if item in bigram_dict:
+			for second in test_dict[item]:
+				if second in bigram_dict[item]: #If this bigram exists
+					pass
+				else:
+					if "<UNK>" in test_dict2[item]:
+						test_dict2[item]["<UNK>"] += test_dict2[item][second]
+					else:
+						test_dict2[item]["<UNK>"] = test_dict2[item][second]
+					del test_dict2[item][second] #Replace it with the word unk
+		else:
+			pass
+	return test_dict2

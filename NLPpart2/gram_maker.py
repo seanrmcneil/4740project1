@@ -55,8 +55,8 @@ def ngram_prob(dict1, num_tokens):
 		ngram_probabilities[item] = Decimal(dict1[item])/Decimal(num_tokens)
 	return ngram_probabilities
 
-def ngram(Filename, ngram_dict,bgram_dict):
-	tokens = tokenize1(Filename)
+def ngram_test_file(Filename, ngram_dict,bgram_dict): #Takes in list so we dont need to retokenize
+	tokens = Filename
 	num_tokens = 0
 	num_bigrams = 0
 	#works for unigrams and bigrams
