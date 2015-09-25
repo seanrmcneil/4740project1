@@ -1,9 +1,9 @@
 #Simply replaces the counts of ngrams that occur infrequently using the good turing method
 
 #practice dictionaries
-d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
+#d = {"one": 1, "oneagain": 1, "three": 3, "four": 4, "eight" : 8, "nine": 9}
 #dd = {"one one": 1, "one again": 1, "three three": 3, "four four": 4, "eight eight" : 8, "nine nine": 9}
-sample= {"hi": {"hey":3}, "banana": {"monkey":2}, "hey":{"ho":3, "this":1}, "monkey":{"eat":6, "loves":1}}
+#sample= {"hi": {"hey":3}, "banana": {"monkey":2}, "hey":{"ho":3, "this":1}, "monkey":{"eat":6, "loves":1}}
 
 
 #good turing smoothing for bigrams
@@ -15,7 +15,7 @@ def good_turring_bigram(bigram_dict):
 			if value <= 5:
 				dict2[name] = float((value+1)*((Nb["Nb{0}".format(value+1)])/(Nb["Nb{0}".format(value)])))
 
-	print bigram_dict
+	return bigram_dict
 
 def good_turring_unigram(unigram_dict):
 	Nu = count_unigrams(unigram_dict)
@@ -57,6 +57,6 @@ def count_unigrams(unigram_dict):
 		Nu["Nu{0}".format(i)] = sum(1 for x in unigram_dict.values() if x == i)
 	return Nu
 
-count_bigrams(sample)
-good_turring_bigram(sample)
+#count_bigrams(sample)
+#good_turring_bigram(sample)
 # good_turring_unigram(d)
