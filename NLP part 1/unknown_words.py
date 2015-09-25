@@ -18,7 +18,6 @@ def unknown_words_uni(unigram_dict):
 	return unigram_dict_unk
 
 def unknown_words_bi(bigram_dict):
-
 	bigram_dict_unk = bigram_dict.copy()
 	bigram_dict_unk["<UNK>"] = 0
 
